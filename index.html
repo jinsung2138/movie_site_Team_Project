@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieSearchSite</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/reset.css">
+</head>
+
+<body>
+  <header>
+    <a href="./index.html">
+      <h1>Popular Movies Collection</h1>
+    </a>
+    <div class="movie_search_bar">
+      <label for="movie_search">영화 검색</label>
+      <input type="search" name="movie_search" id="movie_search" placeholder="영화 제목을 입력해 주세요." autofocus />
+      <button type=" button" id="search_button" onclick="movieSearch()">검색</button>
+    </div>
+  </header>
+  <main>
+    <div class="movie_cards_wrap">
+    </div>
+  </main>
+
+  <script src='./src/main.js'></script>
+  <script>
+    // 'Enter 키 누르면 영화 검색'
+    let searchKey = document.querySelector('#movie_search');
+    searchKey.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        movieSearch();
+      }
+    })
+  </script>
+</body>
+
+</html>
